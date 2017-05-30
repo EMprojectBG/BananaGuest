@@ -28,7 +28,7 @@ public class Proyecto {
 	//Metodos:
 		public List <Tarea> mostrarTareas(Tarea unaTarea){
 			this.listaDeTareas.add(unaTarea);
-			return.this.listaDeTareas;
+			return this.listaDeTareas;
 		}
 	}
 	

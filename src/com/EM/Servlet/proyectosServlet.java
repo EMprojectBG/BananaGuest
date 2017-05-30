@@ -10,7 +10,6 @@ import javax.servlet.http.HttpSession;
 
 import com.EM.modelo.Proyecto;
 
-
 @WebServlet("/proyectosServlet")
 public class proyectosServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -23,6 +22,7 @@ public class proyectosServlet extends HttpServlet {
 				switch () {
 				
 				case email=="ricardo@l.es":
+					
 					Proyecto[] listaProyectos1={
 							new Proyecto = ("ProyectoRicardoA", 1, "app bancaria", "15/7/2017", true, ),
 							new Proyecto = ("ProyectoRicardoB", 2, "game", "15/7/2017", true, ),
