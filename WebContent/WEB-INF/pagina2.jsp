@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,17 +24,17 @@
             <div class="col-md-offset-5 col-md-3">
                 <div class="form-login">
                     <h3>Welcome back.</h3>
-                    <form id='form_login'>
+                    <form action="login" method="POST" id='form_login' >
                         <label for="userName" class="control-label">User</label>
-                    <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="User" value='.bananaguest' pattern="[a-zA-Z]*\.bananaguest" required/>
+                    <input type="text" name="email" id="userName" class="form-control input-sm chat-input" placeholder="User" value='.bananaguest' pattern="[a-zA-Z]*\.bananaguest" required/>
                     </br>
                     <label for="userPassword" class="control-label">Password</label>
-                    <input type="password" id="userPassword" class="form-control input-sm chat-input" placeholder="Pass" required />
+                    <input type="password" name="password" id="userPassword" class="form-control input-sm chat-input" placeholder="Pass" required />
                     </br>
 
                     <div class="wrapper">
                         <span class="group-btn">     
-                <a id="btn_login" href="paginaprincipal.html" class="btn">login <i class="fa fa-sign-in"></i></a>
+                <a id="btn_login" href="paginaprincipal" class="btn">login <i class="fa fa-sign-in"></i></a>
                 <div id='errores'></div>
             </span>
             </form>
