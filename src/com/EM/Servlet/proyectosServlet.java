@@ -13,7 +13,6 @@ import javax.servlet.http.HttpSession;
 import com.EM.modelo.Proyecto;
 import com.EM.modelo.Tarea;
 
-
 @WebServlet("/proyectosServlet")
 public class proyectosServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -21,29 +20,26 @@ public class proyectosServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession misession = (HttpSession) request.getSession();
-
-		if (misession.getAttribute("idUsuario") != null) {
-
-			//if(email==ricardo@l.es) {
-				// Tareas:
-				Tarea[] listaTareasA = { new Tarea("TareaA", "Brainstorm", "Pepe C."),
-						new Tarea("TareaB", "Entrega AI", "Luisa G.") };
-				Tarea[] listaTareasB = { new Tarea("TareaA", "Brainstorm", "Luisa G."),
-						new Tarea("TareaB", "Entregas", "Pepe C.") };
-				Tarea[] listaTareasC = { new Tarea("TareaA", "Entrega AI", "Pepe C."),
-						new Tarea("TareaB", "Brainstorm", "Luisa G.") };
-				// Proyectos:
-				Proyecto[] listaProyectos = {
-						new Proyecto("ProyectoRicardoA", 4, "app bancaria", "15/7/2017", true, listaTareasA),
-						new Proyecto("ProyectoRicardoB", 2, "game", "15/7/2017", true, listaTareasB),
-						new Proyecto("ProyectoRicardoC", 3, "app empresa", "15/7/2017", true, listaTareasC),
-						new Proyecto("ProyectoRicardoD", 1, "app empresa", "15/7/2017", false, null),
-						new Proyecto("ProyectoRicardoD", 1, "app empresa", "15/7/2017", false, null)
-				
-					};
-			//}
 		
-
+		if( misession.getAttribute("idUsuario")!=null ){
+			Tarea[] listaTareasA = { new Tarea("TareaA", "Brainstorm", "Pepe C."),
+					new Tarea("TareaB", "Entrega AI", "Luisa G.") };
+			Tarea[] listaTareasB = { new Tarea("TareaA", "Brainstorm", "Luisa G."),
+					new Tarea("TareaB", "Entregas", "Pepe C.") };
+			Tarea[] listaTareasC = { new Tarea("TareaA", "Entrega AI", "Pepe C."),
+					new Tarea("TareaB", "Brainstorm", "Luisa G.") };
+			
+			Proyecto proyectoRicardoA = new Proyecto("ProyectoRicardoA", 4, "app bancaria", "15/7/2017", true, listaTareasA);
+			Proyecto proyectoRicardoB = new Proyecto("ProyectoRicardoB", 2, "game", "15/7/2017", true, listaTareasB);
+			
+		
+			
+	
+			
+			request.getRequestDispatcher("proyectos.jsp").forward(request, response);
+		}else{
+			misession.invalidate();
+			response.sendRedirect("login");
 		}
 	}
 
