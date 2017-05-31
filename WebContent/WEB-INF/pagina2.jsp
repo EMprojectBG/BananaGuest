@@ -12,11 +12,9 @@
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style1.css">
 </head>
-
+<c:set var="errorclass" value="${mierror?"has-error":""}" />
 <body>
-    <header>
-
-    </header>
+<jsp:include page="header.jsp"></jsp:include>
 
     <!--Welcome Back-->
     <div class="containerlogin">
@@ -26,10 +24,10 @@
                     <h3>Welcome back.</h3>
                     <form action="login" method="POST" id='form_login' >
                         <label for="userName" class="control-label">User</label>
-                    <input type="text" name="email" id="userName" class="form-control input-sm chat-input" placeholder="User" value='.bananaguest' pattern="[a-zA-Z]*\.bananaguest" required/>
+                    <input type="text" name="email" id="userName" class="form-control input-sm chat-input ${errorclass}" placeholder="User" value='.bananaguest' pattern="[a-zA-Z]*\.bananaguest" required/>
                     </br>
                     <label for="userPassword" class="control-label">Password</label>
-                    <input type="password" name="password" id="userPassword" class="form-control input-sm chat-input" placeholder="Pass" required />
+                    <input type="password" name="password" id="userPassword" class="form-control input-sm chat-input ${errorclass}" placeholder="Pass" required />
                     </br>
 
                     <div class="wrapper">
