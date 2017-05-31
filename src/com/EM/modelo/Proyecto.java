@@ -31,6 +31,54 @@ public class Proyecto {
 	//	public List <Tarea> mostrarTareas(Tarea unaTarea){
 	//	this.listaDeTareas.add(unaTarea);
 		//	return this.listaDeTareas;
+
+	public String nombreProyecto() {
+		return nombreProyecto;
+	}
+
+	public void nombreProyecto(String nombreProyecto) {
+		this.nombreProyecto = nombreProyecto;
+	}
+
+	public int idProyecto() {
+		return idProyecto;
+	}
+
+	public void idProyecto(int idProyecto) {
+		this.idProyecto = idProyecto;
+	}
+
+	public String descProyecto() {
+		return descProyecto;
+	}
+
+	public void descProyecto(String descProyecto) {
+		this.descProyecto = descProyecto;
+	}
+
+	public String fechaFinProyecto() {
+		return fechaFinProyecto;
+	}
+
+	public void fechaFinProyecto(String fechaFinProyecto) {
+		this.fechaFinProyecto = fechaFinProyecto;
+	}
+
+	public boolean estado() {
+		return estado;
+	}
+
+	public void estado(boolean estado) {
+		this.estado = estado;
+	}
+
+	public Tarea[] listaDeTareas() {
+		return listaDeTareas;
+	}
+
+	public void listaDeTareas(Tarea[] listaDeTareas) {
+		this.listaDeTareas = listaDeTareas;
+	}
 		
 
 	}
