@@ -2,6 +2,8 @@ package com.EM.modelo;
 
 import java.util.ArrayList;
 import java.util.List;
+import com.EM.modelo.Tarea;
+import com.EM.modelo.Tarea;
 
 
 public class Proyecto {
@@ -12,24 +14,25 @@ public class Proyecto {
 	private String descProyecto = "";
 	private String fechaFinProyecto = "";
 	private boolean estado;
-	private List<Tarea> listaDeTareas;
+	private Tarea[] listaDeTareas;
 
 	//Constructor:
+
 	public Proyecto(String nombreProyecto, int idProyecto, String descProyecto, String fechaFinProyecto, boolean estado,
-			List<Tarea> listaDeTareas) {
+			Tarea[] listaDeTareas) {
 		super();
 		this.nombreProyecto = nombreProyecto;
 		this.idProyecto = idProyecto;
 		this.descProyecto = descProyecto;
 		this.fechaFinProyecto = fechaFinProyecto;
 		this.estado = estado;
-		this.listaDeTareas = new ArrayList<Tarea>();
-		
+		this.listaDeTareas = listaDeTareas;
+	}
 	//Metodos:
-		public List <Tarea> mostrarTareas(Tarea unaTarea){
-			this.listaDeTareas.add(unaTarea);
-			return this.listaDeTareas;
-		}
+	//	public List <Tarea> mostrarTareas(Tarea unaTarea){
+	//	this.listaDeTareas.add(unaTarea);
+		//	return this.listaDeTareas;
+		
+
 	}
 	
-}

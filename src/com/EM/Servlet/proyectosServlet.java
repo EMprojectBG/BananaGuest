@@ -1,6 +1,8 @@
 package com.EM.Servlet;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.EM.modelo.Proyecto;
+import com.EM.modelo.Tarea;
+
 
 @WebServlet("/proyectosServlet")
 public class proyectosServlet extends HttpServlet {
@@ -16,46 +20,32 @@ public class proyectosServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession misession= (HttpSession) request.getSession();
-		
-			if(misession.getAttribute("idUsuario")!=null){	
-				switch () {
-				
-				case email=="ricardo@l.es":
-					
-					Proyecto[] listaProyectos1={
-							new Proyecto = ("ProyectoRicardoA", 1, "app bancaria", "15/7/2017", true, ),
-							new Proyecto = ("ProyectoRicardoB", 2, "game", "15/7/2017", true, ),
-							new Proyecto = ("ProyectoRicardoC", 3, "app empresa", "15/7/2017", true, ),
-							new Proyecto = ("ProyectoRicardoD", 4, "app bancaria", "15/7/2017", true, )			
-					};
-						
-					break;
-				case email=="juana@l.es":
-					Proyecto[] listaProyectos2={
-							new Proyecto = ("ProyectoJuanaA", 1, "app empresa", "15/7/2017", true, ),
-							new Proyecto = ("ProyectoJuanaB", 2, "app empresa", "15/7/2017", true, ),
-							new Proyecto = ("ProyectoJuanaC", 3, "app bancaria", "15/7/2017", true, ),
-							new Proyecto = ("ProyectoJuanaD", 4, "app empresa", "15/7/2017", true, )			
-					};
-						
-					break;
-				case email=="luis@l.es":
-					Proyecto[] listaProyectos3={
-							new Proyecto = ("ProyectoLuisA", 1, "app empresa", "15/7/2017", true, ),
-							new Proyecto = ("ProyectoLuisB", 1, "game", "15/7/2017", true, ),
-							new Proyecto = ("ProyectoLuisC", 1, "app bancaria", "15/7/2017", true, ),
-							new Proyecto = ("ProyectoLuisD", 1, "app empresa", "15/7/2017", true, )			
-					};
-						
-					break;
+		HttpSession misession = (HttpSession) request.getSession();
 
-				default:
-					break;
-				}
-			
-			}
+		if (misession.getAttribute("idUsuario") != null) {
+
+			//if(email==ricardo@l.es) {
+				// Tareas:
+				Tarea[] listaTareasA = { new Tarea("TareaA", "Brainstorm", "Pepe C."),
+						new Tarea("TareaB", "Entrega AI", "Luisa G.") };
+				Tarea[] listaTareasB = { new Tarea("TareaA", "Brainstorm", "Luisa G."),
+						new Tarea("TareaB", "Entregas", "Pepe C.") };
+				Tarea[] listaTareasC = { new Tarea("TareaA", "Entrega AI", "Pepe C."),
+						new Tarea("TareaB", "Brainstorm", "Luisa G.") };
+				// Proyectos:
+				Proyecto[] listaProyectos = {
+						new Proyecto("ProyectoRicardoA", 4, "app bancaria", "15/7/2017", true, listaTareasA),
+						new Proyecto("ProyectoRicardoB", 2, "game", "15/7/2017", true, listaTareasB),
+						new Proyecto("ProyectoRicardoC", 3, "app empresa", "15/7/2017", true, listaTareasC),
+						new Proyecto("ProyectoRicardoD", 1, "app empresa", "15/7/2017", false, null),
+						new Proyecto("ProyectoRicardoD", 1, "app empresa", "15/7/2017", false, null)
+				
+					};
+			//}
+		
+
 		}
+	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

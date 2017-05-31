@@ -3,9 +3,9 @@ package com.EM.modelo;
 public class Tarea {
 
 	//Atributos:
-	private String nombreTarea = "";
-	private String descTarea = "";
-	private String responsable = "";
+	private String nombreTarea;
+	private String descTarea;
+	private String responsable;
 	
 	//Consructor:
 	public Tarea(String nombreTarea, String descTarea, String responsable) {
