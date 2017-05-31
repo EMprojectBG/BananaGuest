@@ -1,9 +1,8 @@
 package com.EM.modelo;
 
-import java.util.ArrayList;
-import java.util.List;
+
 import com.EM.modelo.Tarea;
-import com.EM.modelo.Tarea;
+
 
 
 public class Proyecto {

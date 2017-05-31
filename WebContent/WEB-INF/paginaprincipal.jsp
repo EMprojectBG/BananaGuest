@@ -15,11 +15,13 @@
 <header><jsp:include page="header.jsp"></jsp:include></header>
 
 <section>
-	<c:forEach var="proy"  items="${listaproyectos}" varStatus="counter">
+	<c:forEach var="proy"  items="${listaProyectosAmostrar}" varStatus="counter">
 			<li>
-				| <span>${proy.nombre}</span> -
-				  <span>${proy.id}</span> -
-				  <span>${proy.fecha}</span> |
+				| <span>${proy.nombreProyecto}</span> -
+				  <span>${proy.idProyecto}</span> -
+				  <span>${proy.descProyecto}</span>
+				  <span>${proy.fechaFinProyecto}</span> 
+				  <span>${proy.estado}</span> 
 			</li>
 	
 	</c:forEach>
