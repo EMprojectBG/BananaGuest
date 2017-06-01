@@ -20,7 +20,7 @@ import com.EM.modelo.Usuario;
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	// creamas db objetos usuarios
+	// creamos db objetos usuarios
 	Usuario ricardo = new Usuario("ricardo@l.es", "ricardo", "Ricardo", false, null);
 	Usuario juana = new Usuario("juana@l.es", "juana", "Juana", false, null);
 	Usuario luis = new Usuario("luis@l.es", "luis", "Luis", false, null);
