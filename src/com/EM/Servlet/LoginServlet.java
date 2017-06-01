@@ -36,7 +36,10 @@ public class LoginServlet extends HttpServlet {
 		email = request.getParameter("email");
 		password = request.getParameter("password");
 		
-		if( email.equals(ricardo.getEmail()) && password.equals(ricardo.getPassword()) || email.equals(juana.getEmail()) && password.equals(juana.getPassword()) || email.equals(luis.getEmail()) && password.equals(luis.getPassword()) ){
+		Pattern pat = Pattern.compile("\\b[\\w.%-]+@[-.\\w]+\\.[A-Za-z]{2,4}\\b");
+		Matcher matcher = pat.matcher(email);
+		
+		if( email.equals(ricardo.getEmail()) && password.equals(ricardo.getPassword()) && matcher.matches() || email.equals(juana.getEmail()) && password.equals(juana.getPassword()) && matcher.matches() || email.equals(luis.getEmail()) && password.equals(luis.getPassword()) && matcher.matches() ){
 			HttpSession misession= (HttpSession)request.getSession();
 			misession.setAttribute("idUsuario", email);
 			
