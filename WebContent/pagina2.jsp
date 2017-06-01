@@ -14,7 +14,10 @@
 </head>
 <c:set var="errorclass" value="${mierror?"has-error":""}" />
 <body>
+<<<<<<< HEAD:WebContent/pagina2.jsp
+=======
 
+>>>>>>> 45c077519f0d2b3205655dae37f6dbdc9956efc5:WebContent/WEB-INF/pagina2.jsp
     <!--Welcome Back-->
     <div class="containerlogin">
         <div class="row">
@@ -23,7 +26,11 @@
                     <h3>Welcome back.</h3>
                     <form action="login" method="POST" id='form_login' >
                         <label for="userName" class="control-label">User</label>
+<<<<<<< HEAD:WebContent/pagina2.jsp
+                    <input type="email" name="email" id="userName" class="form-control input-sm chat-input ${errorclass}" placeholder="User" value='@l.es' required/>
+=======
                     <input type="email" name="email" id="userName" class="form-control input-sm chat-input ${errorclass}" placeholder="Email" value='@l.es'  required/>
+>>>>>>> 45c077519f0d2b3205655dae37f6dbdc9956efc5:WebContent/WEB-INF/pagina2.jsp
                     </br>
                     <label for="userPassword" class="control-label">Password</label>
                     <input type="password" name="password" id="userPassword" class="form-control input-sm chat-input ${errorclass}" placeholder="Pass" required />

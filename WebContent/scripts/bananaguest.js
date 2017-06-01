@@ -16,7 +16,7 @@ function validaEntrada1() {
 
     if (user.validity.valueMissing) mensaje += '<li> Introduce tu nombre de usuario</li>';
     if (pass.validity.valueMissing) mensaje += ' <li>Introduce tu contraseña</li>';
-    if (user.validity.patternMismatch) mensaje += '<li>El nombre de usuario no coincide con el patrón establecido: example.bananaguest</li>'
+    
 
     document.getElementById('errores').innerHTML = mensaje;
 
