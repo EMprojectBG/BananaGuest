@@ -29,9 +29,7 @@
                     <input type="password" name="password" id="userPassword" class="form-control input-sm chat-input ${errorclass}" placeholder="Pass" required value="ricardo" />
                     </br>
 
-                    <div class="wrapper">
-                        <span class="group-btn">     
-                <a id="btn_login" href="login" class="btn">login <i class="fa fa-sign-in"></i></a>
+                
                 <div id='errores'></div>
                 <button>Enviar</button>
             </span>

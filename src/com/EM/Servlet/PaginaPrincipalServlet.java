@@ -48,7 +48,7 @@ public class PaginaPrincipalServlet extends HttpServlet {
 
 			}
 			
-			System.out.println("listaProyectos:"+listaProyectos);
+			
 
 			request.setAttribute("listaProyectosAmostrar", listaProyectos);
 			request.getRequestDispatcher("paginaprincipal.jsp").forward(request, response);

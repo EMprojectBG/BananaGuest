@@ -25,7 +25,7 @@ public class proyectosServlet extends HttpServlet {
 		if (misession.getAttribute("idUsuario") != null) {
 			Proyecto proyectoA=null;
 			//USUARIO RICARDO:
-			if (request.getAttribute("nombreProyecto").equals( "ProyectoRicardoA") ) {
+			if (request.getParameter("nombreProyecto").equals( "ProyectoRicardoA") ) {
 			
 				Tarea[] listaTareasR= {
 						new Tarea("TareaA", "Brainstorm", "Pepe C."),
@@ -36,7 +36,7 @@ public class proyectosServlet extends HttpServlet {
 			}
 		
 			//USUARIO JUANA:
-			if(request.getAttribute("nombreProyecto").equals("ProyectoJuanaA")){
+			if(request.getParameter("nombreProyecto").equals("ProyectoJuanaA")){
 				Tarea[] listaTareasJ = {
 						new Tarea("TareaA", "Brainstorm", "Pepe C."),
 						new Tarea("TareaB", "Entrega AI", "Luisa G.") };
@@ -46,7 +46,7 @@ public class proyectosServlet extends HttpServlet {
 			}
 	
 			//USUARIO LUIS:
-			if (request.getAttribute("nombreProyecto").equals("ProyectoLuisA")){
+			if (request.getParameter("nombreProyecto").equals("ProyectoLuisA")){
 				Tarea[] listaTareasL = {
 						new Tarea("TareaA", "Brainstorm", "Pepe C."),
 						new Tarea("TareaB", "Entrega AI", "Luisa G.") };
@@ -58,8 +58,7 @@ public class proyectosServlet extends HttpServlet {
 			
 			
 
-			
-			
+			request.setAttribute("proyectoAmostrar", proyectoA);
 
 			request.getRequestDispatcher("proyectos.jsp").forward(request, response);
 		} else {
