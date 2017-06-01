@@ -14,8 +14,6 @@
 </head>
 <c:set var="errorclass" value="${mierror?"has-error":""}" />
 <body>
-<jsp:include page="header.jsp"></jsp:include>
-
     <!--Welcome Back-->
     <div class="containerlogin">
         <div class="row">
@@ -24,7 +22,7 @@
                     <h3>Welcome back.</h3>
                     <form action="login" method="POST" id='form_login' >
                         <label for="userName" class="control-label">User</label>
-                    <input type="text" name="email" id="userName" class="form-control input-sm chat-input ${errorclass}" placeholder="User" value='.bananaguest' pattern="[a-zA-Z]*\.bananaguest" required/>
+                    <input type="email" name="email" id="userName" class="form-control input-sm chat-input ${errorclass}" placeholder="User" value='@l.es' required/>
                     </br>
                     <label for="userPassword" class="control-label">Password</label>
                     <input type="password" name="password" id="userPassword" class="form-control input-sm chat-input ${errorclass}" placeholder="Pass" required />

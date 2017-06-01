@@ -25,7 +25,7 @@ public class proyectosServlet extends HttpServlet {
 		if (misession.getAttribute("idUsuario") != null) {
 			Proyecto proyectoA=null;
 			//USUARIO RICARDO:
-			if (request.getAttribute("nombreProyecto")== ProyectoRicardoA) {
+			if (request.getAttribute("nombreProyecto").equals( "ProyectoRicardoA") ) {
 			
 				Tarea[] listaTareasR= {
 						new Tarea("TareaA", "Brainstorm", "Pepe C."),
@@ -36,7 +36,7 @@ public class proyectosServlet extends HttpServlet {
 			}
 		
 			//USUARIO JUANA:
-			if(request.getAttribute("nombreProyecto")== ProyectoJuanaA){
+			if(request.getAttribute("nombreProyecto").equals("ProyectoJuanaA")){
 				Tarea[] listaTareasJ = {
 						new Tarea("TareaA", "Brainstorm", "Pepe C."),
 						new Tarea("TareaB", "Entrega AI", "Luisa G.") };
@@ -46,7 +46,7 @@ public class proyectosServlet extends HttpServlet {
 			}
 	
 			//USUARIO LUIS:
-			if (request.getAttribute("nombreProyecto")== ProyectoLuisA){
+			if (request.getAttribute("nombreProyecto").equals("ProyectoLuisA")){
 				Tarea[] listaTareasL = {
 						new Tarea("TareaA", "Brainstorm", "Pepe C."),
 						new Tarea("TareaB", "Entrega AI", "Luisa G.") };
