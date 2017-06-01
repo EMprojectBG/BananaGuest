@@ -15,6 +15,9 @@
 <header><jsp:include page="header.jsp"></jsp:include></header>
 
 <section>
+<div>
+	<h3>Proyectos Activos:</h3>
+	
 	<c:forEach var="proy"  items="${listaProyectosAmostrar}" varStatus="counter">
 	<c:if test="proy.estado==true">
 				<li>
@@ -26,6 +29,9 @@
 				  ></a>
 			</li>
 	</c:if>
+</div>
+<div>
+	<h3>Proyectos Finalizados:</h3>
 	<c:if test="proy.estado==false">
 			<li>
 				  <span>${proy.nombreProyecto}</span> -
@@ -34,10 +40,9 @@
 			</li>
 	
 	</c:if>
-			
-	
 	</c:forEach>
 	
+	</div>	
 	
 	
 </section>
