@@ -16,15 +16,25 @@
 
 <section>
 	<c:forEach var="proy"  items="${listaProyectosAmostrar}" varStatus="counter">
-			<li>
-				<a  href = "proyectos.jsp"
+	<c:if test="proy.estado==true">
+				<li>
+				<a  href = "proyectosServlet?idp=${proy.nombreProyecto}" 
 				| <span>${proy.nombreProyecto}</span> -
 				  <span>${proy.idProyecto}</span> -
-				  <span>${proy.descProyecto}</span>
-				  <span>${proy.fechaFinProyecto}</span> 
-				  <span>${proy.estado}</span> |
+				  <span>${proy.fechaFinProyecto}</span>  
+				  
 				  ></a>
 			</li>
+	</c:if>
+	<c:if test="proy.estado==false">
+			<li>
+				  <span>${proy.nombreProyecto}</span> -
+				  <span>${proy.idProyecto}</span> -
+				  <span>${proy.fechaFinProyecto}</span> 
+			</li>
+	
+	</c:if>
+			
 	
 	</c:forEach>
 	

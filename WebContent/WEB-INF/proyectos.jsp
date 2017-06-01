@@ -14,17 +14,20 @@
 <header><jsp:include page="header.jsp"></jsp:include></header>
 	
 	<h2>Detalle del proyecto:</h2>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
-		<li></li>
+		<li><h4>Nombre:<h4>${Proyecto.nombreProyecto}</li>
+		<li><h4>ID:<h4>${Proyecto.idProyecto}</li>
+		<li><h4>Descrpición:<h4>${Proyecto.descProyecto}</li>
+		<li><h4>Fecha de finalización:<h4>${Proyecto.fechaFinProyecto}</li>
+		<li><h4>Estado:<h4>${Proyecto.estado}</li>
 
+	<c:forEach var="tar"  items="${listaDeTareas}" varStatus="counter">
 	<h2>Tareas asociadas:</h2>
-		<li></li>
-		<li></li>
-		<li></li>
-
+		<li>
+		<span>${tar.nombreTarea}</span>
+		<span>${tar.descTarea}</span>
+		<span>${tar.responsable}</span>
+		</li>
+	</c:forEach>
 
 
 </body>

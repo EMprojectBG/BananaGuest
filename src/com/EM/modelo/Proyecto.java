@@ -27,11 +27,7 @@ public class Proyecto {
 		this.estado = estado;
 		this.listaDeTareas = listaDeTareas;
 	}
-	//Metodos:
-	//	public List <Tarea> mostrarTareas(Tarea unaTarea){
-	//	this.listaDeTareas.add(unaTarea);
-		//	return this.listaDeTareas;
-
+	//setters and getters
 	public String nombreProyecto() {
 		return nombreProyecto;
 	}

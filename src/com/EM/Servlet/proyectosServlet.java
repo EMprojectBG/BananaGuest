@@ -16,36 +16,60 @@ import com.EM.modelo.Tarea;
 @WebServlet("/proyectosServlet")
 public class proyectosServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession misession = (HttpSession) request.getSession();
+
+		if (misession.getAttribute("idUsuario") != null) {
+			Proyecto proyectoA=null;
+			//USUARIO RICARDO:
+			if (request.getAttribute("nombreProyecto")== ProyectoRicardoA) {
+			
+				Tarea[] listaTareasR= {
+						new Tarea("TareaA", "Brainstorm", "Pepe C."),
+						new Tarea("TareaB", "Entrega AI", "Luisa G.") };
+
+				 proyectoA = new Proyecto("ProyectoRicardoA", 4, "app bancaria", "15/7/2017", true,
+						listaTareasR);
+			}
 		
-		if( misession.getAttribute("idUsuario")!=null ){
-			
-			Tarea[] listaTareasA = { new Tarea("TareaA", "Brainstorm", "Pepe C."),
-					new Tarea("TareaB", "Entrega AI", "Luisa G.") };
-			Tarea[] listaTareasB = { new Tarea("TareaA", "Brainstorm", "Luisa G."),
-					new Tarea("TareaB", "Entregas", "Pepe C.") };
-			Tarea[] listaTareasC = { new Tarea("TareaA", "Entrega AI", "Pepe C."),
-					new Tarea("TareaB", "Brainstorm", "Luisa G.") };
-			
-			Proyecto proyectoRicardoA = new Proyecto("ProyectoRicardoA", 4, "app bancaria", "15/7/2017", true, listaTareasA);
-			Proyecto proyectoRicardoB = new Proyecto("ProyectoRicardoB", 2, "game", "15/7/2017", true, listaTareasB);
-			Proyecto ProyectoRicardoC = new Proyecto("ProyectoRicardoC", 3, "app empresa", "15/7/2017", true, listaTareasC);
-			Proyecto ProyectoRicardoD =new Proyecto("ProyectoRicardoD", 1, "app empresa", "15/7/2017", false, null);
-			Proyecto ProyectoRicardoE =new Proyecto("ProyectoRicardoD", 0, "app empresa", "15/7/2017", false, null);
-		
-			
+			//USUARIO JUANA:
+			if(request.getAttribute("nombreProyecto")== ProyectoJuanaA){
+				Tarea[] listaTareasJ = {
+						new Tarea("TareaA", "Brainstorm", "Pepe C."),
+						new Tarea("TareaB", "Entrega AI", "Luisa G.") };
+
+				 proyectoA = new Proyecto("ProyectoJuanaA", 4, "app bancaria", "15/7/2017", true,
+						listaTareasJ);
+			}
 	
+			//USUARIO LUIS:
+			if (request.getAttribute("nombreProyecto")== ProyectoLuisA){
+				Tarea[] listaTareasL = {
+						new Tarea("TareaA", "Brainstorm", "Pepe C."),
+						new Tarea("TareaB", "Entrega AI", "Luisa G.") };
+
+				 proyectoA = new Proyecto("ProyectoLuisA", 4, "app bancaria", "15/7/2017", true,
+						listaTareasL);
+			}
 			
+			
+			
+
+			
+			
+
 			request.getRequestDispatcher("proyectos.jsp").forward(request, response);
-		}else{
+		} else {
 			misession.invalidate();
 			response.sendRedirect("login");
 		}
 	}
 
+	
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
