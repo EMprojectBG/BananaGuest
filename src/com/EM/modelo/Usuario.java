@@ -15,10 +15,6 @@ public class Usuario {
 		this.listaDeProyectos = listaDeProyectos;
 		
 	}
-	/*public List <Proyecto> mostrarProyectos(Proyecto unProyecto){
-		this.listaDeProyectos.add(unProyecto);
-		return this.listaDeProyectos;
-	}*/
 
 	public String getEmail() {
 		return email;
