@@ -22,6 +22,7 @@ public class proyectosServlet extends HttpServlet {
 		HttpSession misession = (HttpSession) request.getSession();
 		
 		if( misession.getAttribute("idUsuario")!=null ){
+			
 			Tarea[] listaTareasA = { new Tarea("TareaA", "Brainstorm", "Pepe C."),
 					new Tarea("TareaB", "Entrega AI", "Luisa G.") };
 			Tarea[] listaTareasB = { new Tarea("TareaA", "Brainstorm", "Luisa G."),
@@ -31,7 +32,9 @@ public class proyectosServlet extends HttpServlet {
 			
 			Proyecto proyectoRicardoA = new Proyecto("ProyectoRicardoA", 4, "app bancaria", "15/7/2017", true, listaTareasA);
 			Proyecto proyectoRicardoB = new Proyecto("ProyectoRicardoB", 2, "game", "15/7/2017", true, listaTareasB);
-			
+			Proyecto ProyectoRicardoC = new Proyecto("ProyectoRicardoC", 3, "app empresa", "15/7/2017", true, listaTareasC);
+			Proyecto ProyectoRicardoD =new Proyecto("ProyectoRicardoD", 1, "app empresa", "15/7/2017", false, null);
+			Proyecto ProyectoRicardoE =new Proyecto("ProyectoRicardoD", 0, "app empresa", "15/7/2017", false, null);
 		
 			
 	

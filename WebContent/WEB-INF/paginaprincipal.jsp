@@ -17,11 +17,13 @@
 <section>
 	<c:forEach var="proy"  items="${listaProyectosAmostrar}" varStatus="counter">
 			<li>
+				<a  href = "proyectos.jsp"
 				| <span>${proy.nombreProyecto}</span> -
 				  <span>${proy.idProyecto}</span> -
 				  <span>${proy.descProyecto}</span>
 				  <span>${proy.fechaFinProyecto}</span> 
-				  <span>${proy.estado}</span> 
+				  <span>${proy.estado}</span> |
+				  ></a>
 			</li>
 	
 	</c:forEach>

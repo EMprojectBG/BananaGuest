@@ -20,18 +20,41 @@ public class PaginaPrincipalServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession misession = (HttpSession) request.getSession();
-
+		
 		if( misession.getAttribute("idUsuario")!=null ){
-			Proyecto[] listaProyectos = {
-					new Proyecto("ProyectoRicardoA", 4, "app bancaria", "15/7/2017", true, null),
-					new Proyecto("ProyectoRicardoB", 2, "game", "15/7/2017", true, null),
-					new Proyecto("ProyectoRicardoC", 3, "app empresa", "15/7/2017", true, null),
-					new Proyecto("ProyectoRicardoD", 1, "app empresa", "15/7/2017", false, null),
-					new Proyecto("ProyectoRicardoD", 1, "app empresa", "15/7/2017", false, null)
-			};
+			Proyecto[] listaProyectos=null;
+			if (request.getAttribute("email")=="ricardo@l.es") {
+				listaProyectos = new Proyecto[]{
+						new Proyecto("ProyectoRicardoA", 4, "app bancaria", "15/7/2017", true, null),
+						new Proyecto("ProyectoRicardoB", 2, "game", "15/7/2017", true, null),
+						new Proyecto("ProyectoRicardoC", 3, "app empresa", "15/7/2017", true, null),
+						new Proyecto("ProyectoRicardoD", 1, "app empresa", "15/7/2017", false, null),
+						new Proyecto("ProyectoRicardoD", 1, "app empresa", "15/7/2017", false, null)
+				};
+			}
+			else if (request.getAttribute("email")=="Juana@l.es") {
+				listaProyectos = new Proyecto[]{
+						new Proyecto("ProyectoJuanaA", 4, "app bancaria", "15/7/2017", true, null),
+						new Proyecto("ProyectoJuanaB", 2, "game", "15/7/2017", true, null),
+						new Proyecto("ProyectoJuanaC", 3, "app empresa", "15/7/2017", true, null),
+						new Proyecto("ProyectoJuanaD", 1, "app empresa", "15/7/2017", false, null),
+						new Proyecto("ProyectoJuanaD", 1, "app empresa", "15/7/2017", false, null)
+				};
+				
+			}
+			else if (request.getAttribute("email")=="Luis@l.es") {
+				listaProyectos = new Proyecto[]{
+						new Proyecto("ProyectoLuisA", 4, "app bancaria", "15/7/2017", true, null),
+						new Proyecto("ProyectoLuisB", 2, "game", "15/7/2017", true, null),
+						new Proyecto("ProyectoLuisC", 3, "app empresa", "15/7/2017", true, null),
+						new Proyecto("ProyectoLuisD", 1, "app empresa", "15/7/2017", false, null),
+						new Proyecto("ProyectoLuisD", 1, "app empresa", "15/7/2017", false, null)
+				};
+				
+			}
+
 			
 			request.setAttribute("listaProyectosAmostrar", listaProyectos);
-			
 			request.getRequestDispatcher("pagina_principal.jsp").forward(request, response);
 		}else{
 			misession.invalidate();

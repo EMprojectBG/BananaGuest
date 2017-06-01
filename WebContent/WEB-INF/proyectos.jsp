@@ -12,3 +12,19 @@
 
 <body>
 <header><jsp:include page="header.jsp"></jsp:include></header>
+	
+	<h2>Detalle del proyecto:</h2>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+
+	<h2>Tareas asociadas:</h2>
+		<li></li>
+		<li></li>
+		<li></li>
+
+
+
+</body>
