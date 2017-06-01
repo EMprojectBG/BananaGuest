@@ -1,5 +1,6 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 
 <head>
 <meta charset="UTF-8">
@@ -12,68 +13,63 @@
 </head>
 
 <body>
-<header><jsp:include page="header.jsp"></jsp:include></header>
+	<header><jsp:include page="header.jsp"></jsp:include></header>
 
-<section>
-<div>
-	<h3>Proyectos Activos:</h3>
-	
-	<c:forEach var="proy"  items="${listaProyectosAmostrar}" varStatus="counter">
-	<c:if test="proy.estado==true">
-				<li>
-				<a  href = "proyectosServlet?idp=${proy.nombreProyecto}" 
-				| <span>${proy.nombreProyecto}</span> -
-				  <span>${proy.idProyecto}</span> -
-				  <span>${proy.fechaFinProyecto}</span>  
-				  
-				  ></a>
-			</li>
-	</c:if>
-</div>
-<div>
-	<h3>Proyectos Finalizados:</h3>
-	<c:if test="proy.estado==false">
-			<li>
-				  <span>${proy.nombreProyecto}</span> -
-				  <span>${proy.idProyecto}</span> -
-				  <span>${proy.fechaFinProyecto}</span> 
-			</li>
-	
-	</c:if>
-	</c:forEach>
-	
-	</div>	
-	
-	
-</section>
-		
+	<section>
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		<h3>Proyectos Activos:</h3>
+		<c:forEach var="proy" items="${listaProyectosAmostrar}" varStatus="counter">
+			<div>
+				<c:if test="${proy.estado}">
+					<li><a href="proyectosServlet?idp=${proy.nombreProyecto}"
+						| <span>${proy.nombreProyecto}</span> -
+				  <span>${proy.idProyecto}</span> -
+				  <span>${proy.fechaFinProyecto}</span>></a>
+					</li>
+				</c:if>
+			</div>
+			<div>
+
+				<c:if test="${!proy.estado}">
+					<li>a <span>${proy.nombreProyecto}</span> - <span>${proy.idProyecto}</span>
+						- <span>${proy.fechaFinProyecto}</span>
+					</li>
+
+				</c:if>
+
+
+			</div>
+		</c:forEach>
+
+	</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	<!-- modal edit -->
 	<div id='modal_edit' class="modal fade" tabindex="-1" role="dialog">

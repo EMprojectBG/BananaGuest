@@ -1,13 +1,10 @@
 package com.EM.modelo;
 
-
 import com.EM.modelo.Tarea;
-
-
 
 public class Proyecto {
 
-	//Atributos:
+	// Atributos:
 	private String nombreProyecto = "";
 	private int idProyecto;
 	private String descProyecto = "";
@@ -15,7 +12,7 @@ public class Proyecto {
 	private boolean estado;
 	private Tarea[] listaDeTareas;
 
-	//Constructor:
+	// Constructor:
 
 	public Proyecto(String nombreProyecto, int idProyecto, String descProyecto, String fechaFinProyecto, boolean estado,
 			Tarea[] listaDeTareas) {
@@ -27,55 +24,56 @@ public class Proyecto {
 		this.estado = estado;
 		this.listaDeTareas = listaDeTareas;
 	}
-	//setters and getters
-	public String nombreProyecto() {
+
+	public String getNombreProyecto() {
 		return nombreProyecto;
 	}
 
-	public void nombreProyecto(String nombreProyecto) {
+	public void setNombreProyecto(String nombreProyecto) {
 		this.nombreProyecto = nombreProyecto;
 	}
 
-	public int idProyecto() {
+	public int getIdProyecto() {
 		return idProyecto;
 	}
 
-	public void idProyecto(int idProyecto) {
+	public void setIdProyecto(int idProyecto) {
 		this.idProyecto = idProyecto;
 	}
 
-	public String descProyecto() {
+	public String getDescProyecto() {
 		return descProyecto;
 	}
 
-	public void descProyecto(String descProyecto) {
+	public void setDescProyecto(String descProyecto) {
 		this.descProyecto = descProyecto;
 	}
 
-	public String fechaFinProyecto() {
+	public String getFechaFinProyecto() {
 		return fechaFinProyecto;
 	}
 
-	public void fechaFinProyecto(String fechaFinProyecto) {
+	public void setFechaFinProyecto(String fechaFinProyecto) {
 		this.fechaFinProyecto = fechaFinProyecto;
 	}
 
-	public boolean estado() {
+	public boolean getEstado() {
 		return estado;
 	}
 
-	public void estado(boolean estado) {
+	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
 
-	public Tarea[] listaDeTareas() {
+	public Tarea[] getListaDeTareas() {
 		return listaDeTareas;
 	}
 
-	public void listaDeTareas(Tarea[] listaDeTareas) {
+	public void setListaDeTareas(Tarea[] listaDeTareas) {
 		this.listaDeTareas = listaDeTareas;
 	}
-		
 
-	}
+	// setters and getters
 	
+
+}

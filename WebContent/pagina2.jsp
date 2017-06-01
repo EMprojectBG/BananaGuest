@@ -12,12 +12,8 @@
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style1.css">
 </head>
-<c:set var="errorclass" value="${mierror?"has-error":""}" />
+<!-- c:set var="errorclass" value="${mierror?"has-error":""}" / -->
 <body>
-<<<<<<< HEAD:WebContent/pagina2.jsp
-=======
-
->>>>>>> 45c077519f0d2b3205655dae37f6dbdc9956efc5:WebContent/WEB-INF/pagina2.jsp
     <!--Welcome Back-->
     <div class="containerlogin">
         <div class="row">
@@ -26,20 +22,18 @@
                     <h3>Welcome back.</h3>
                     <form action="login" method="POST" id='form_login' >
                         <label for="userName" class="control-label">User</label>
-<<<<<<< HEAD:WebContent/pagina2.jsp
-                    <input type="email" name="email" id="userName" class="form-control input-sm chat-input ${errorclass}" placeholder="User" value='@l.es' required/>
-=======
-                    <input type="email" name="email" id="userName" class="form-control input-sm chat-input ${errorclass}" placeholder="Email" value='@l.es'  required/>
->>>>>>> 45c077519f0d2b3205655dae37f6dbdc9956efc5:WebContent/WEB-INF/pagina2.jsp
+
+                    <input type="email" name="email" id="userName" class="form-control input-sm chat-input ${errorclass}" placeholder="Email" value='ricardo@l.es'  required/>
                     </br>
                     <label for="userPassword" class="control-label">Password</label>
-                    <input type="password" name="password" id="userPassword" class="form-control input-sm chat-input ${errorclass}" placeholder="Pass" required />
+                    <input type="password" name="password" id="userPassword" class="form-control input-sm chat-input ${errorclass}" placeholder="Pass" required value="ricardo" />
                     </br>
 
                     <div class="wrapper">
                         <span class="group-btn">     
-                <a id="btn_login" href="paginaprincipal" class="btn">login <i class="fa fa-sign-in"></i></a>
+                <a id="btn_login" href="login" class="btn">login <i class="fa fa-sign-in"></i></a>
                 <div id='errores'></div>
+                <button>Enviar</button>
             </span>
             </form>
                     </div>
