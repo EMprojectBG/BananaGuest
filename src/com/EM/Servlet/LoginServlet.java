@@ -30,7 +30,8 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		doPost(request, response);
+		RequestDispatcher rd = request.getRequestDispatcher("pagina2.jsp");
+		rd.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -49,8 +50,7 @@ public class LoginServlet extends HttpServlet {
 			request.getRequestDispatcher("/pagina_principal").forward(request, response);
 		}else{
 			request.setAttribute("mierror", "Email y contraseña erroneos");
-			RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
-			rd.forward(request, response);
+			doGet(request, response);
 		}
 		
 	}
